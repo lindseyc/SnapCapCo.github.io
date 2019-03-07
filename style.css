@@ -1,0 +1,60 @@
+body
+{
+    background:rgb(75, 10, 10);
+    font-family: Verdana, Geneva, sans-serif;
+    color: rgb(243, 230, 230);
+}
+
+img
+{
+    width: auto;
+    height: 250px;
+    padding: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1
+{
+    padding-left: 50px;
+    color: rgb(66, 74, 129);
+}
+
+h2
+{
+    color: rgb(211, 124, 89);
+}
+
+h3
+{
+    color: rgb(170, 86, 53);
+}
+
+a
+{
+    color: rgb(111, 123, 194);
+}
+
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+li a
+{
+    float: left;
+    display: block;
+    color:whitesmoke;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover
+{
+    background-color: rgb(228, 200, 76);
+    color: white;
+}
