@@ -1,8 +1,8 @@
 body
 {
-    background:rgb(75, 10, 10);
-    font-family: Verdana, Geneva, sans-serif;
-    color: rgb(243, 230, 230);
+    background:rgb(245, 245, 245);
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(105, 105, 105);
 }
 
 img
@@ -17,8 +17,8 @@ img
 
 h1
 {
-    padding-left: 50px;
-    color: rgb(66, 74, 129);
+    color: rgb(64, 64, 64);
+    text-align: center;
 }
 
 h2
@@ -57,4 +57,22 @@ li a:hover
 {
     background-color: rgb(228, 200, 76);
     color: white;
+}
+
+.button
+{
+  background-color: rgb(200, 200, 200);
+  text-align: center;
+  margin: auto;
+  width: 100px;
+  padding: 15px;
+}
+
+.button:hover
+{
+  background-color: rgb(200, 200, 250);
+  text-align: center;
+  margin: auto;
+  width: 100px;
+  padding: 15px;
 }
