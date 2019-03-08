@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Welcome to SnapCap</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" href="images/templogo.jpeg">
+  <title>Welcome to SnapCap</title>
+  <link rel="icon" href="images/templogo.jpeg">
+  <script type="text/javascript" src="index.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <div>
-      <h1 id="header">[ SnapCap ]</h1>
-      <img src="images/templogo.jpeg" alt="logo">
-      <br>
-      <div id = "uploadPhoto" class = "button">
-        Upload photo
-      </div>
-      <br>
-      <div id = "takePhoto" class = "button">
-        Take photo
-      </div>
+
+  <div class="container-fluid">
+    <div>
+        <h1 id="header">[ SnapCap ]</h1>
+        <img src="images/templogo.jpeg" alt="logo">
+        <br>
+        <center>
+          <label class="btn btn-default btn-file button">
+              Upload photo
+              <input type="file" style="display: none;">
+          </label>
+          <br><br>
+          <label class="btn btn-default button" onclick="takePhoto()">
+              Take photo
+          </label>
+      </center>
+    </div>
   </div>
 </body>
 </html>
