@@ -21,15 +21,27 @@
         <br>
         <center>
           <label class="btn btn-default btn-file button">
+            <form id="picUpload" method="post" enctype="multipart/form-data">
               Upload photo
-              <input type="file" style="display: none;">
+              <input id="userInput" type="file" style="display: none;" accept="image/*;">
+            </form>
           </label>
-          <br><br>
-          <label class="btn btn-default button" onclick="takePhoto()">
+          <!-- <br><br>
+          <label class="btn btn-default button">
+              <input type="file" style="display: none;" accept="image/*;" capture="camera"/>
               Take photo
+          </label> -->
+          <br><br>
+          <label class="btn btn-default button" onclick="location.href='results.html';">
+              Submit
           </label>
+
       </center>
     </div>
+    <!-- display the captured photo here -->
+    <!-- <div class="output">
+      <img id="photo" alt="screen capture appears here.">
+    </div> -->
   </div>
 </body>
 </html>

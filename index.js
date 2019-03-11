@@ -6,15 +6,25 @@ window.onload = function init() {
     // body.appendChild(button);
 }
 
-function takePhoto()
-{
-    console.log("we're here fam");
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var video = document.getElementById('video');
+// function takePhoto() {
+//     var context = canvas.getContext('2d');
+//     if (width && height) {
+//       canvas.width = width;
+//       canvas.height = height;
+//       context.drawImage(video, 0, 0, width, height);
+//
+//       var data = canvas.toDataURL('image/png');
+//       photo.setAttribute('src', data);
+//     }
+//     else
+//     {
+//       clearphoto();
+//     }
 
-    // Trigger photo take
-    document.getElementById("snap").addEventListener("click", function() {
-        context.drawImage(video, 0, 0, 640, 480);
-    });
+function displayPhoto()
+{
+  var input = document.getElementById("picUpload").value;
+  console.log("hi");
+  console.log(input);
+  document.getElementById("imageHolder").appendChild(input);
 }

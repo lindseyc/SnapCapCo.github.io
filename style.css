@@ -71,5 +71,26 @@ li a:hover
     background-color: rgb(200, 200, 250);
     text-align: center;
     margin: auto;
+}
 
+#left
+{
+  float: left;
+  width: 50%;
+  height: 700px;
+  background:rgb(235, 235, 235);
+}
+
+#right
+{
+  float: right;
+  width: 50%;
+  height: 700px;
+  background:rgb(245, 245, 245);
+}
+
+#imageHolder
+{
+  width: 20%;
+  height: 20%;
 }
