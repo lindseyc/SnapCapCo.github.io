@@ -1,4 +1,4 @@
-# models.py
+# models.py potentially to use to get model
 
 class Mood(models.Model):
     sentiment = models.CharField(max_length=50)
