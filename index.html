@@ -15,33 +15,46 @@
 <body>
 
   <div class="container-fluid">
-    <div>
-        <h1 id="header">[ SnapCap ]</h1>
-        <img src="images/templogo.jpeg" alt="logo">
+
+      <!-- title and logo -->
+      <h1 id="header">[ SnapCap ]</h1>
+      <img src="images/templogo.jpeg" alt="logo">
+
+      <br>
+
+      <center>
+
+        <div class="no-display">
+
+          <!-- uploading photo functionality -->
+          <input id='file-input' class='no-display' type='file'
+              name='file' accept='image/*' style="display: none;"
+              onchange='showPicked(this)'>
+        </div>
+
+        <!-- upload photo button and label -->
+        <button class="btn btn-default btn-file button" type="button"
+              onclick="showPicker()">
+            Upload photo
+        </button>
+        <div class='upload-label'>
+           <label id='upload-label'>No file chosen</label>
+       </div>
+
         <br>
-        <center>
-          <label class="btn btn-default btn-file button">
-            <form id="picUpload" method="post" enctype="multipart/form-data">
-              Upload photo
-              <input id="userInput" type="file" style="display: none;" accept="image/*;">
-            </form>
-          </label>
-          <!-- <br><br>
-          <label class="btn btn-default button">
-              <input type="file" style="display: none;" accept="image/*;" capture="camera"/>
-              Take photo
-          </label> -->
-          <br><br>
-          <label class="btn btn-default button" onclick="location.href='results.html';">
-              Submit
-          </label>
+
+        <!-- submit button -->
+        <button class="btn btn-default button" onclick="analyze();">
+            Submit
+        </button>
 
       </center>
+
+    <!-- displaying the captured photo -->
+    <div class="output">
+      <img id="image-picked" class="no-display" height="200">
     </div>
-    <!-- display the captured photo here -->
-    <!-- <div class="output">
-      <img id="photo" alt="screen capture appears here.">
-    </div> -->
+    
   </div>
 </body>
 </html>

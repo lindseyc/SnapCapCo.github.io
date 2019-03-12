@@ -15,48 +15,18 @@ img
     margin-right: auto;
 }
 
+label
+{
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight:normal;
+  font-size: 80%;
+  color: rgb(100, 100, 100);
+}
+
 h1
 {
     color: rgb(64, 64, 64);
     text-align: center;
-}
-
-h2
-{
-    color: rgb(211, 124, 89);
-}
-
-h3
-{
-    color: rgb(170, 86, 53);
-}
-
-a
-{
-    color: rgb(111, 123, 194);
-}
-
-ul
-{
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-}
-
-li a
-{
-    float: left;
-    display: block;
-    color:whitesmoke;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-}
-
-li a:hover
-{
-    background-color: rgb(228, 200, 76);
-    color: white;
 }
 
 .button

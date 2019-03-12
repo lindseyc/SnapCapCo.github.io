@@ -1,30 +1,36 @@
-window.onload = function init() {
-    // var button = document.createElement("button");
-    // button.innerHTML = "Hello";
+var el = x => document.getElementById(x);
 
-    // var body = document.getElementsByTagName("body")[0];
-    // body.appendChild(button);
+function showPicker(inputId) { el('file-input').click(); }
+
+function showPicked(input) {
+    el('upload-label').innerHTML = input.files[0].name;
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        el('image-picked').src = e.target.result;
+        el('image-picked').className = '';
+    }
+    reader.readAsDataURL(input.files[0]);
 }
 
-// function takePhoto() {
-//     var context = canvas.getContext('2d');
-//     if (width && height) {
-//       canvas.width = width;
-//       canvas.height = height;
-//       context.drawImage(video, 0, 0, width, height);
-//
-//       var data = canvas.toDataURL('image/png');
-//       photo.setAttribute('src', data);
-//     }
-//     else
-//     {
-//       clearphoto();
-//     }
+function analyze() {
+    location.href='results.html';
+    var uploadFiles = el('file-input').files;
+    if (uploadFiles.length != 1) alert('Please select 1 file to analyze!');
 
-function displayPhoto()
-{
-  var input = document.getElementById("picUpload").value;
-  console.log("hi");
-  console.log(input);
-  document.getElementById("imageHolder").appendChild(input);
+    el('analyze-button').innerHTML = 'Analyzing...';
+    var xhr = new XMLHttpRequest();
+    var loc = window.location
+    xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
+    xhr.onerror = function() {alert (xhr.responseText);}
+    xhr.onload = function(e) {
+        if (this.readyState === 4) {
+            var response = JSON.parse(e.target.responseText);
+            el('result-label').innerHTML = `Result = ${response['result']}`;
+        }
+        el('analyze-button').innerHTML = 'Analyze';
+    }
+
+    var fileData = new FormData();
+    fileData.append('file', uploadFiles[0]);
+    xhr.send(fileData);
 }
