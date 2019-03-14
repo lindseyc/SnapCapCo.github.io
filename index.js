@@ -20,7 +20,9 @@ function analyze() {
     el('analyze-button').innerHTML = 'Analyzing...';
     var xhr = new XMLHttpRequest();
     var loc = window.location
-    console.log(loc);
+    console.log(`${loc.protocol}`);
+    console.log(`${loc.hostname}`);
+    console.log(`${loc.port}`);
     xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
     xhr.onerror = function() {alert (xhr.responseText);}
     xhr.onload = function(e) {
