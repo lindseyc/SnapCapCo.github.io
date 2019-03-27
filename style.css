@@ -64,3 +64,54 @@ h1
   width: 20%;
   height: 20%;
 }
+
+.footerLinks ul {
+    display: inline-block;
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+}
+
+.footerLinks ul li {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    right: 50%;
+}
+
+.footerLinks {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    bottom: 0;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+  float: center;
+}
+
+
+
+#container{
+  min-height: 100%;
+  position: relative;
+  height: 100%;
+}
+
+#body{
+  padding: 10px;
+  padding-bottom: 60px;
+}
