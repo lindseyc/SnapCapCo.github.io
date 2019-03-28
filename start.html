@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<div id="container">
 <head>
   <title>Welcome to SnapCap</title>
   <link rel="icon" href="images/templogo.jpeg">
@@ -13,20 +12,53 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<div id="body">
 <body>
 
   <div class="container-fluid">
 
       <!-- title and logo -->
       <h1 id="header">[ SnapCap ]</h1>
-      <!-- <img src="images/templogo.jpeg" alt="logo"> -->
+      <img src="images/templogo.jpeg" alt="logo">
 
+      <br>
 
+      <center>
+
+        <div class="no-display">
+
+          <!-- uploading photo functionality -->
+          <input id='file-input' class='no-display' type='file'
+              name='file' accept='image/*' style="display: none;"
+              onchange='showPicked(this)'>
+        </div>
+
+        <!-- upload photo button and label -->
+        <button class="btn btn-default btn-file button" type="button"
+              onclick="showPicker()">
+            Upload photo
+        </button>
+        <div class='upload-label'>
+           <label id='upload-label'>No file chosen</label>
+       </div>
+
+        <br>
+
+        <!-- submit button -->
+        <div class="analyze">
+          <button class="btn btn-default button" id = "analyze-button" onclick="analyze();">
+              Submit
+          </button>
+        </div>
+
+      </center>
+
+    <!-- displaying the captured photo -->
+    <div class="output">
+      <img id="image-picked" class="no-display" height="200">
+    </div>
 
   </div>
 </body>
-</div>
 
 <div id="footer">
   <footer>
@@ -44,5 +76,5 @@
       </div>
   </footer>
 </div>
-</div>
+
 </html>
