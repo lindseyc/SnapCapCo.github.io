@@ -116,6 +116,7 @@ h1
 }
 
 .footerLinks {
+    font-family: Tahoma, Geneva, sans-serif;
     float: left;
     width: 100%;
     overflow: hidden;
