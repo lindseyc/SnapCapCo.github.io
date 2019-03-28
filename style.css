@@ -43,7 +43,7 @@ h1
     margin: auto;
 }
 
-#left
+#leftresults
 {
   float: left;
   width: 50%;
@@ -51,12 +51,43 @@ h1
   background:rgb(235, 235, 235);
 }
 
-#right
+#rightresults
 {
   float: right;
   width: 50%;
   height: 700px;
   background:rgb(245, 245, 245);
+}
+
+#leftwelcome
+{
+  float: left;
+  width: 50%;
+  height: 450px;
+  background:rgb(245, 245, 245);
+  font-size: 120%;
+  padding-top: 30px;
+}
+
+#rightwelcome
+{
+  float: right;
+  width: 50%;
+  height: 450px;
+  background:rgb(245, 245, 245);
+  font-size: 120%;
+  padding-top: 30px;
+}
+
+#getstarted
+{
+  background-color: rgb(200, 200, 250);
+  font-size: 180%;
+}
+
+#getstarted:hover
+{
+  background-color: rgb(150, 150, 200);
 }
 
 #imageHolder
