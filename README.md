@@ -7,9 +7,9 @@
 The files are structured in MVC style, so that the controller mediates interaction between the model and the view.
 
 
-### 'view' pages
-* 'welcome.html'
+### 'view' pages'
 * 'index.html'
+* 'start.html'
 * 'about.html'
 * 'howitworks.html'
 
