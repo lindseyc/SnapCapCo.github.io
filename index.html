@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<div id="container">
 <head>
   <title>Welcome to SnapCap</title>
   <link rel="icon" href="images/templogo.jpeg">
@@ -12,51 +13,66 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<div id="body">
 <body>
 
-  <div class="container-fluid">
+<div class="container-fluid">
 
-      <!-- title and logo -->
-      <h1 id="header">[ SnapCap ]</h1>
-      <img src="images/templogo.jpeg" alt="logo">
+    <!-- title and logo -->
+    <h1 id="header">[ SnapCap ]</h1>
+    <!-- <img src="images/templogo.jpeg" alt="logo"> -->
 
-      <br>
-
-      <center>
-
-        <div class="no-display">
-
-          <!-- uploading photo functionality -->
-          <input id='file-input' class='no-display' type='file'
-              name='file' accept='image/*' style="display: none;"
-              onchange='showPicked(this)'>
-        </div>
-
-        <!-- upload photo button and label -->
-        <button class="btn btn-default btn-file button" type="button"
-              onclick="showPicker()">
-            Upload photo
-        </button>
-        <div class='upload-label'>
-           <label id='upload-label'>No file chosen</label>
-       </div>
-
-        <br>
-
-        <!-- submit button -->
-        <div class="analyze">
-          <button class="btn btn-default button" id = "analyze-button" onclick="analyze();">
-              Submit
-          </button>
-        </div>
-
-      </center>
-
-    <!-- displaying the captured photo -->
-    <div class="output">
-      <img id="image-picked" class="no-display" height="200">
+    <!-- Left side: image, caption -->
+    <center>
+    <div id="leftwelcome">
+        Let us caption your photo using emotional intelligence! Follow these steps:<br><br>
+        <ol>
+            <li>Upload or take photo</li>
+            <li>Submit the photo for analysis</li>
+            <li>Review your new caption</li>
+            <li>Share to your favorite social media platform</li>
+        </ol>
     </div>
 
-  </div>
+    <!-- Right side: analysis, stats -->
+    <div id="rightwelcome">
+      Mood detected is HAPPY
+      <br><br>
+      <img src="https://photolemur.com/uploads/blog/14987422825954fe0ab26701.59203691.jpg">
+      Your caption:<br>
+      “If I was you, I’d wanna be me too”
+      <br><br>
+      Source: “Me Too” - Meghan Trainor”
+
+    </div>
+
+    <button class="btn btn-default btn-file button" type="button" id="getstarted"
+            onclick="window.location.href='start.html'">
+        Get Started
+    </button>
+    </center>
+
+</div>
+
+
 </body>
+</div>
+
+<div id="footer">
+  <footer>
+    <div class="footerLinks">
+        <ul>
+          <!-- FILL IN w/ correct paths -->
+          <li> <a href="index.html"> Home </a> </li>
+          <li> | </li>
+          <li> <a href="start.html"> Get Started </a> </li>
+          <li> | </li>
+          <li> <a href="howitworks.html"> How it Works </a> </li>
+          <li> | </li>
+          <li> <a href="about.html"> About Us </a> </li>
+        </ul>
+      </div>
+  </footer>
+</div>
+</div>
 </html>
