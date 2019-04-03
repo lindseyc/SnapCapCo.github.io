@@ -63,18 +63,16 @@ h1
 {
   float: left;
   width: 50%;
-  height: 450px;
-  background:rgb(245, 245, 245);
+  height: 200px;
   font-size: 120%;
-  padding-top: 30px;
+  margin-top: 130px;
 }
 
 #rightwelcome
 {
   float: right;
   width: 50%;
-  height: 450px;
-  background:rgb(245, 245, 245);
+  height: 400px;
   font-size: 120%;
   padding-top: 30px;
 }
@@ -83,6 +81,9 @@ h1
 {
   background-color: rgb(200, 200, 250);
   font-size: 180%;
+  margin-top: 60px;
+  margin-left: 45%;
+  bottom: 0;
 }
 
 #getstarted:hover
