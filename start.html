@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
 <body>
@@ -23,6 +24,36 @@
       <br>
 
       <center>
+
+        <!-- webcam capture functionality (not done with style yet) -->
+        
+        <!-- <div id="cam-container">
+          <video autoplay="true" id="videoElement">
+
+          </video>
+            <script>
+              var video = document.querySelector("#videoElement");
+
+              if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                  console.log(stream);
+                  video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                  if(err0r.name === 'TrackStartError'){
+                    console.log("track start error");
+                    }
+                  else {
+                    console.log("Something went wrong!");
+                    console.log(err0r.name + err0r.message);
+                    }
+
+                  });
+                }
+          </script>
+        </div> -->
+
 
         <div class="no-display">
 
@@ -43,7 +74,7 @@
 
         <br>
 
-        <!-- submit button -->
+        <!-- submit button, need to adjust to only "analyze" when there is input -->
         <div class="analyze">
           <button class="btn btn-default button" id = "analyze-button" onclick="analyze();">
               Submit
