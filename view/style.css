@@ -97,6 +97,8 @@ h1
   height: 20%;
 }
 
+/* webcam style  */
+
 #cam-container {
   margin: 0px auto;
   width: 500px;
@@ -109,6 +111,8 @@ h1
 	height: 375px;
 	background-color: #666;
 }
+
+/* footer style */
 
 .footerLinks ul {
     display: inline-block;
