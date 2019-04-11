@@ -2,14 +2,14 @@
 import csv
 
 with open('miniSongDatabase.csv') as csvfile:
-    csv_reader = csv.reader(csvfile, delimiter=',')
-    line_count = 0
+    csvReader = csv.reader(csvfile, delimiter=',')
+    lineCount = 0
     songDatabase = []
 
-    for row in csv_reader:
-        if line_count == 0:
+    for row in csvReader:
+        if lineCount == 0:
             print(f'Column names are {", ".join(row)}')
-            line_count += 1
+            lineCount += 1
         else:
             songName = row[1]
             artist = row[2]
@@ -24,7 +24,7 @@ with open('miniSongDatabase.csv') as csvfile:
             lyric1 = row[16]
             lyric2 = row[17]
 
-            line_count += 1
+            lineCount += 1
 
             #check for keys corresponding to emotions
             if key == 2 and mode == 1 or key == 9 and mode == 1:
