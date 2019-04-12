@@ -29,6 +29,26 @@ h1
     text-align: center;
 }
 
+h2
+{
+  color: rgb(80, 80, 80);
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+h4
+{
+  color: rgb(80, 80, 80);
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+p
+{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
 .button
 {
   background-color: rgb(255, 255, 255);
@@ -75,15 +95,24 @@ h1
   height: 400px;
   font-size: 120%;
   padding-top: 30px;
+  text-align: center;
 }
 
 #getstarted
 {
   background-color: rgb(200, 200, 250);
   font-size: 180%;
-  margin-top: 60px;
-  margin-left: 45%;
-  bottom: 0;
+}
+
+#getstarteddiv
+{
+  text-align: center;
+  position:absolute;
+  width: 100px;
+  bottom:0px;
+  right:25%;
+  left:50%;
+  margin-left: -85px; /* random number... */
 }
 
 #getstarted:hover
