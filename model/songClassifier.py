@@ -1,20 +1,20 @@
 # Ali and Anisha
 import csv
 
-with open('miniSongDatabase.csv') as csvfile:
+with open('songDatabase.csv') as csvfile:
     csvReader = csv.reader(csvfile, delimiter=',')
     lineCount = 0
-    songDatabase = []
+    happy, sad, angry, disgust = [], [], [], []
 
     for row in csvReader:
-        if lineCount == 0:
-            print(f'Column names are {", ".join(row)}')
+        if lineCount < 2:
             lineCount += 1
         else:
             songName = row[1]
             artist = row[2]
-            danceability = float(row[3])
-            energy = float(row[4])
+            #danceability = float(row[3])
+            #energy = int(row[3])
+            print("linecount:", lineCount, " ", row[5])
             key = int(row[5])
             loudness = row[6]
             mode = int(row[7])
@@ -30,7 +30,7 @@ with open('miniSongDatabase.csv') as csvfile:
             if key == 2 and mode == 1 or key == 9 and mode == 1:
                 emotion = "happy"
             elif key == 3 and mode == 0:
-                emotion = "fear"
+                emotion = "disgust"
             elif key == 6 and mode == 0:
                 emotion = "sad"
             elif key == 11 and mode == 1:
@@ -41,38 +41,49 @@ with open('miniSongDatabase.csv') as csvfile:
                 if valence <= 0.4:
                     if tempo <= 105:
                         emotion = "sad"
-                    elif tempo > 105 and tempo <= 133:
-                        emotion = "disgust"
                     else:
                         emotion = "angry"
                 # more positive song
-                elif valence > 0.4 and valence < 0.6:
-                    if tempo <= 105:
-                        emotion = "fear"
-                    elif tempo < 105 and tempo <= 133:
-                        emotion = "neutral"
-                    else:
-                        emotion = "surprise"
                 elif valence > 0.6:
                     if tempo <= 119:
-                        emotion = "neutral"
+                        emotion = "disgust"
                     elif tempo > 119:
                         emotion = "happy"
 
-            print(songName , " was written by " , artist
-            , " and has a danceability of: " , danceability
-            , ", an energy of: " , energy , ", a key of: " ,
-            key , ", a loudness of: " , loudness ,  ", a mode of: "
-            , mode , ", a valence of: " , valence, ", a tempo of: "
-            , str(tempo), " and has been categorized as ", emotion, "\n")
+            songInfo1 = [songName, artist, lyric1]
+            songInfo2 = [songName, artist, lyric2]
+            if(emotion == "happy"):
+                happy.append(songInfo1)
+                happy.append(songInfo2)
+            elif(emotion == "angry"):
+                angry.append(songInfo1)
+                angry.append(songInfo2)
+            elif(emotion == "sad"):
+                sad.append(songInfo1)
+                sad.append(songInfo2)
+            elif(emotion == "disgust"):
+                disgust.append(songInfo1)
+                disgust.append(songInfo2)
+            
 
-            songInfo = [emotion, songName, artist, lyric1, lyric2]
-            songDatabase.append(songInfo)
-
-with open('emotionDatabase.csv', mode='w') as csvfile:
+with open('happysongs.csv', mode='w') as csvfile:
     database = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    for row in songDatabase:
+    for row in happy:
+        database.writerow(row)
+
+with open('angrysongs.csv', mode='w') as csvfile:
+    database = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    for row in angry:
+        database.writerow(row)
+
+with open('sadsongs.csv', mode='w') as csvfile:
+    database = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    for row in sad:
+        database.writerow(row)
+
+with open('disgustedsongs.csv', mode='w') as csvfile:
+    database = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    for row in disgust:
         database.writerow(row)
 
 
-    print(f'Processed {line_count} lines.')
