@@ -20,7 +20,7 @@
   var startbutton = null;
 
   function startup() {
-    video = document.getElementById('videoElement');
+    video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
@@ -30,8 +30,16 @@
       video.srcObject = stream;
       video.play();
     })
+    // if webcam is blocked, display logo instead by removing camera div
     .catch(function(err) {
-      console.log("An error occurred: " + err);
+      div = document.getElementById('cam-container');
+      while(div.firstChild){
+        div.removeChild(div.firstChild);
+      }
+      logoImg = "<img src='../images/templogo.jpeg' alt='logo'>";
+      div.innerHTML = logoImg;
+      console.log("An error occurred: " + err + "...now the logo is there?");
+
     });
 
     video.addEventListener('canplay', function(ev){
@@ -86,8 +94,12 @@
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
 
-      var data = canvas.toDataURL('image/png');
-      photo.setAttribute('src', data);
+      // after taking photo, stop video elt, TODO: replace w/ something else? logo?
+      // video.srcObject.getVideoTracks().forEach(track => track.stop());
+      //right now it is just black ^^
+
+      //var data = canvas.toDataURL('image/png');
+      //photo.setAttribute('src', data);
     } else {
       clearphoto();
     }

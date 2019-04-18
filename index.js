@@ -1,4 +1,5 @@
 var el = x => document.getElementById(x);
+var camimg = document.getElementById('photo')
 
 function showPicker(inputId) { el('file-input').click(); }
 

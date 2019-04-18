@@ -20,46 +20,29 @@
 
       <!-- title and logo -->
       <h1 id="header">[ SnapCap ]</h1>
-      <img src="../images/templogo.jpeg" alt="logo">
+
+      <!-- display this if they don't want to have webcam -->
+      <!-- <img src="../images/templogo.jpeg" alt="logo"> -->
 
       <br>
 
       <center>
 
-        <!-- webcam capture functionality (not done with style yet) -->
-
+        <!-- webcam -->
         <div id="cam-container">
-          <video autoplay="true" id="videoElement">stream here</video>
-          <button id="startbutton">Take photo</button>
-
-          <!-- script to stream the video after user gives permission -->
-            <!-- <script>
-              var video = document.querySelector("#videoElement");
-
-              if (navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function (stream) {
-                  console.log(stream);
-                  video.srcObject = stream;
-                })
-                .catch(function (err0r) {
-                  if(err0r.name === 'TrackStartError'){
-                    console.log("track start error");
-                    }
-                  else {
-                    console.log("Something went wrong!");
-                    console.log(err0r.name + err0r.message);
-                    }
-
-                  });
-                }
-          </script> -->
+          <!-- the camera/video elt -->
+          <div id="camera">
+            <video autoplay="true" id="video">stream here</video>
+            <button id="startbutton">Take photo</button>
+          </div>
         </div>
+
+        <br />
         <!-- display photo below  -->
-        <canvas id="canvas">
-        </canvas>
         <div class="output">
-          <img id="photo" alt="The screen capture will appear in this box.">
+          <canvas id="canvas" display:"none">
+            <img id="photo" alt="The screen capture will appear in this box.">
+          </canvas>
         </div>
 
 
@@ -93,9 +76,9 @@
       </center>
 
     <!-- displaying the captured photo -->
-    <div class="output">
+    <!-- <div class="output">
       <img id="image-picked" class="no-display" height="200">
-    </div>
+    </div> -->
 
   </div>
 </body>
