@@ -39,6 +39,12 @@
         div.removeChild(div.firstChild);
         // div2.removeChild(div2.firstChild);
       }
+      while(div2.firstChild){
+        div2.removeChild(div2.firstChild);
+        // div2.removeChild(div2.firstChild);
+      }
+      //add child for uploaded photo into the div2
+      
 
       // user does not allow permission for webcam, display logo instead
       logoImg = "<img src='../images/templogo.jpeg' alt='logo'>";

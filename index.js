@@ -1,5 +1,6 @@
 var el = x => document.getElementById(x);
 var camimg = document.getElementById('photo')
+var canvas = document.getElementById('canvas')
 
 function showPicker(inputId) { el('file-input').click(); }
 
@@ -19,10 +20,13 @@ function analyze() {
     var campic = el('photo');
     console.log(uploadFiles.length);
     if (uploadFiles.length != 1) {
+      // this is not null by default
       if(campic == null){
-        alert('Please select a file or take a photo to analyze!');
+        // look is there is an img?
       }
       else {
+        // var context = canvas.getContext('2d');
+        // console.log(context);
         alert('Please select a file or take a photo to analyze!');
 
       }
