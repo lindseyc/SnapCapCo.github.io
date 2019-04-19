@@ -24,6 +24,7 @@
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
+    uploadbutton = document.getElementById('upload_photo_btn');
 
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function(stream) {
@@ -33,13 +34,15 @@
     // if webcam is blocked, display logo instead by removing camera div
     .catch(function(err) {
       div = document.getElementById('cam-container');
+      div2 = document.getElementById('output1');
       while(div.firstChild){
         div.removeChild(div.firstChild);
+        // div2.removeChild(div2.firstChild);
       }
+
+      // user does not allow permission for webcam, display logo instead
       logoImg = "<img src='../images/templogo.jpeg' alt='logo'>";
       div.innerHTML = logoImg;
-      console.log("An error occurred: " + err + "...now the logo is there?");
-
     });
 
     video.addEventListener('canplay', function(ev){
@@ -93,10 +96,11 @@
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
-
       // after taking photo, stop video elt, TODO: replace w/ something else? logo?
       // video.srcObject.getVideoTracks().forEach(track => track.stop());
       //right now it is just black ^^
+      // after taking photo, don't allow user to 'upload' a photo, so disable upload button
+      uploadbutton.disabled = true;
 
       //var data = canvas.toDataURL('image/png');
       //photo.setAttribute('src', data);

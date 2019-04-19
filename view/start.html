@@ -39,7 +39,7 @@
 
         <br />
         <!-- display photo below  -->
-        <div class="output">
+        <div id="output1">
           <canvas id="canvas" display:"none">
             <img id="photo" alt="The screen capture will appear in this box.">
           </canvas>
@@ -56,7 +56,7 @@
         </div>
 
         <!-- upload photo button and label -->
-        <button class="btn btn-default btn-file button" type="button"
+        <button id="upload_photo_btn" class="btn btn-default btn-file button" type="button"
               onclick="showPicker()">
             Upload photo
         </button>
@@ -76,9 +76,9 @@
       </center>
 
     <!-- displaying the captured photo -->
-    <!-- <div class="output">
+    <div class="output">
       <img id="image-picked" class="no-display" height="200">
-    </div> -->
+    </div>
 
   </div>
 </body>
