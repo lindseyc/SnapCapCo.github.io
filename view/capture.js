@@ -103,8 +103,8 @@
       // after taking photo, don't allow user to 'upload' a photo, so disable upload button
       uploadbutton.disabled = true;
 
-      //var data = canvas.toDataURL('image/png');
-      //photo.setAttribute('src', data);
+      var data = canvas.toDataURL('image/png');
+      photo.setAttribute('src', data);
     } else {
       clearphoto();
     }

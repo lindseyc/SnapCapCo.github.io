@@ -1,5 +1,4 @@
 var el = x => document.getElementById(x);
-var cam = document.getElementById('photo')
 var canvas = document.getElementById('canvas')
 
 function showPicker(inputId) { el('file-input').click(); }
@@ -17,22 +16,24 @@ function showPicked(input) {
 function analyze() {
     //location.href='results.html';
     var uploadFiles = el('file-input').files;
+    var cam = document.getElementById('photo')
+
     // var campic = cam.src;
     console.log(uploadFiles.length);
     if (uploadFiles.length != 1) {
       // this is not null by default
-      if(cam.src == null){
+      if(cam.src != null){
         // look is there is an img?
-        console.log("there is not webcam pic");
+        console.log("there is a webcam pic");
       }
       else {
         // var context = canvas.getContext('2d');
-        console.log(campic);
+        console.log("there is no webcam pic or uploaded file");
         alert('Please select a file or take a photo to analyze!');
 
       }
      }
-     else{
+    else{
     // edit so that it only changes to 'analyzing...' if there is a photo
       el('analyze-button').innerHTML = 'Analyzing...';
       var xhr = new XMLHttpRequest();
@@ -40,6 +41,7 @@ function analyze() {
       console.log(`${loc.protocol}`);
       console.log(`${loc.hostname}`);
       console.log(`${loc.port}`);
+      // issue here - open on invalid url file....
       xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
       xhr.onerror = function() {alert (xhr.responseText);}
       xhr.onload = function(e) {
@@ -51,7 +53,13 @@ function analyze() {
       }
 
       var fileData = new FormData();
+      // need to edit here to take in one or the other (cam or file)
+      // for file:
       fileData.append('file', uploadFiles[0]);
+      // for webcam:
+      //fileData.append(cam.src);
+
       xhr.send(fileData);
+      console.log("file data sent!");
   }
 }
