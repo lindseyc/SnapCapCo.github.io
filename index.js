@@ -1,5 +1,5 @@
 var el = x => document.getElementById(x);
-var camimg = document.getElementById('photo')
+var cam = document.getElementById('photo')
 var canvas = document.getElementById('canvas')
 
 function showPicker(inputId) { el('file-input').click(); }
@@ -17,16 +17,17 @@ function showPicked(input) {
 function analyze() {
     //location.href='results.html';
     var uploadFiles = el('file-input').files;
-    var campic = el('photo');
+    // var campic = cam.src;
     console.log(uploadFiles.length);
     if (uploadFiles.length != 1) {
       // this is not null by default
-      if(campic == null){
+      if(cam.src == null){
         // look is there is an img?
+        console.log("there is not webcam pic");
       }
       else {
         // var context = canvas.getContext('2d');
-        // console.log(context);
+        console.log(campic);
         alert('Please select a file or take a photo to analyze!');
 
       }
