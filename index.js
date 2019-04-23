@@ -25,6 +25,31 @@ function analyze() {
       if(cam.src != null){
         // look is there is an img?
         console.log("there is a webcam pic");
+        // call analyze on webcam pic
+
+
+        alert(document.images[0].src);
+
+        // console.log("Uploading...")
+        // var image = document.getElementById('photo').src;
+        // var form = document.getElementById('myForm');
+        // var formData = new FormData(form);
+        // formData.append("file", image);
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.open("POST", "/signup");
+        //
+        // // check when state changes,
+        // xmlhttp.onreadystatechange = function() {
+        //
+        // if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        //     alert(xmlhttp.responseText);
+        //     }
+        // }
+        //
+        // xmlhttp.send(formData);
+        // console.log(formData.get('file'));
+        // console.log(formData.get('userID'));
+
       }
       else {
         // var context = canvas.getContext('2d');
@@ -42,6 +67,7 @@ function analyze() {
       console.log(`${loc.hostname}`);
       console.log(`${loc.port}`);
       // issue here - open on invalid url file....
+      //xhr.open('POST', `file//localhost/https/analyze`, true);
       xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
       xhr.onerror = function() {alert (xhr.responseText);}
       xhr.onload = function(e) {
