@@ -27,10 +27,18 @@ def upload_file():
             file.save(save_to)
             # get the prediction from the model:
             pred_idx=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
+            pred_class=generate_prediction(pred_idx)
             # now get the caption from the DB:
             lyric_caption=generate_caption(pred_idx)
-            return render_template('displayResult.html', filename=filename, prediction=pred_idx, caption=lyric_caption)
+            return render_template('displayResult.html', filename=filename, prediction=pred_class, caption=lyric_caption)
     return render_template('index.html')
+
+def generate_prediction(pred_idx):
+    classes = ['happy', 'sad', 'disgusted', 'angry']
+    pred_class = classes[pred_idx]
+    return pred_class
+
+
 
 # generate caption functions
 def generate_caption(pred_idx):
