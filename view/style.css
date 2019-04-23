@@ -208,3 +208,9 @@ p
   clear: both;
   display: table;
 }
+
+#copyInput
+{
+  margin-top: 250px;
+  margin-bottom: 10px;
+}
