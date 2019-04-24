@@ -13,6 +13,7 @@ function showPicked(input) {
     reader.readAsDataURL(input.files[0]);
 }
 
+
 function analyze() {
     //location.href='results.html';
     var uploadFiles = el('file-input').files;
@@ -25,7 +26,10 @@ function analyze() {
       if(cam.src != null){
         // look is there is an img?
         console.log("there is a webcam pic");
+
         // call analyze on webcam pic
+        // toDataURL... look up to see if can access in here
+        // var canvasData =
 
 
         alert(document.images[0].src);

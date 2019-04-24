@@ -91,6 +91,7 @@
   // drawing that to the screen, we can change its size and/or apply
   // other changes before drawing it.
 
+
   function takepicture() {
     var context = canvas.getContext('2d');
     if (width && height) {
@@ -105,10 +106,15 @@
 
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
+    //  document.write(data);
+
+    //  file_put_contents("myimage.png", base64_decode(explode(",", $_GET['data'])[1]));
+     document.querySelector('#dl-btn').href = data;
     } else {
       clearphoto();
     }
   }
+
 
   // Set up our event listener to run the startup process
   // once loading is complete.
