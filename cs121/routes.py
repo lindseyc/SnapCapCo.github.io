@@ -45,13 +45,13 @@ def generate_caption(pred_idx):
     classes = ['happy', 'sad', 'disgusted', 'angry']
     pred_class = classes[pred_idx]
     if pred_class == 'happy':
-        return getSongData('~/cs121/app/happysongs.csv')
+        return getSongData('~/cs121/app/databases/happysongs.csv')
     if pred_class == 'sad':
-        return getSongData('~/cs121/app/sadsongs.csv')
+        return getSongData('~/cs121/app/databases/sadsongs.csv')
     if pred_class == 'angry':
-        return getSongData('~/cs121/app/angrysongs.csv')
+        return getSongData('~/cs121/app/databases/angrysongs.csv')
     if pred_class == 'disgusted':
-        return getSongData('~/cs121/app/disgustedsongs.csv')
+        return getSongData('~/cs121/app/databases/disgustedsongs.csv')
 
 # get caption from database
 def getSongData(fileName):
