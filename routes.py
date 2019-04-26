@@ -1,8 +1,15 @@
+import flask
 from flask import render_template, redirect, url_for, request, send_from_directory, flash
 from app import app
 import os
 from werkzeug import secure_filename
 from app import predictor
+
+APP = flask.Flask(__name__, template_folder="templates")
+
+@APP.route("/")
+def home():
+    return flask.render_template('main.html')
 
 @app.route('/<filename>')
 def get_file(filename):
