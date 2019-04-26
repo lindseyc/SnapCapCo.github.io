@@ -51,7 +51,7 @@ def model_predict(img_path, model_path):
         return caption
     else:
         randValue = random.randint(0,len(happy))
-        caption = 'happy! ' + ' Your Caption is: ' +  happy[randValue][2] + ' From: ' + happy[randValue][0] + ' by: '  + happy[randValue][1] 
+        caption = 'happy! ' + ' Your Caption is: ' +  happy[randValue][2] + ' From: ' + happy[randValue][0] + ' by: '  + happy[randValue][1]
         return caption
 
 def generate_caption(pred_idx):
