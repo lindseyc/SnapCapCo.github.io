@@ -1,8 +1,15 @@
+import flask
 from flask import render_template, redirect, url_for, request, send_from_directory, flash
 from app import app
 import os
 from werkzeug import secure_filename
-from app import predictor 
+from app import predictor
+
+APP = flask.Flask(__name__, template_folder="templates")
+
+@APP.route("/")
+def home():
+    return flask.render_template('main.html')
 
 @app.route('/<filename>')
 def get_file(filename):
@@ -25,12 +32,16 @@ def upload_file():
             filename = secure_filename(file.filename)
             save_to=(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file.save(save_to)
+
+            pred_class=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
+            return render_template('displayResult.html', filename=filename, prediction=pred_class)
+            return render_template('index.html')
             # get the prediction from the model:
-            pred_idx=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
-            pred_class=generate_prediction(pred_idx)
-            # now get the caption from the DB:
-            lyric_caption=generate_caption(pred_idx)
-            return render_template('displayResult.html', filename=filename, prediction=pred_class, caption=lyric_caption)
+            # pred_idx=predictor.model_predict(save_to, '/home/ubuntu/cs121/app')
+            # pred_class=generate_prediction(pred_idx)
+            # # now get the caption from the DB:
+            # lyric_caption=generate_caption(pred_idx)
+            # return render_template('displayResult.html', filename=filename, prediction=pred_class, caption=lyric_caption)
     return render_template('index.html')
 
 def generate_prediction(pred_idx):
